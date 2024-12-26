@@ -1,170 +1,133 @@
+<?php
+// 读取 README 文件内容
+$readme_content = file_get_contents('README.md');
+?>
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Git.BETA.GS</title>
-  
-  <!-- Favicon -->
-  <link href="https://git.beta.gs/usr/themes/Bubble/images/logo.png" rel="icon" type="image/png">
-  
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
-  
-  <!-- FontAwesome -->
-  <link href="https://git.beta.gs/usr/themes/Bubble/assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-  
-  <!-- Custom CSS (Simple Styling) -->
-  <style>
-    body {
-      font-family: 'Open Sans', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f8f9fe;
-      color: #212529;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>项目主页</title>
 
-    header {
-      background-color: #343a40;
-      padding: 10px 0;
-    }
+    <!-- 引入 Google 字体 -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
 
-    header a {
-      color: #ffffff;
-      font-size: 24px;
-      text-decoration: none;
-    }
+    <!-- 引入 Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 
-    .navbar-toggler-icon {
-      background-color: #ffffff;
-    }
+    <!-- 引入自定义 CSS 样式 -->
+    <link rel="stylesheet" href="style.css">
 
-    .navbar-nav {
-      margin-left: auto;
-    }
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f7fc;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
 
-    .navbar-nav .nav-link {
-      color: #ffffff;
-      font-size: 16px;
-      padding: 0.5rem 1rem;
-    }
+        h1 {
+            text-align: center;
+            margin: 50px 0;
+            color: #2c3e50;
+            font-size: 2.5rem;
+        }
 
-    .navbar-nav .nav-link:hover {
-      background-color: #495057;
-      border-radius: 4px;
-    }
+        .readme-content {
+            max-width: 960px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
 
-    .section-hero {
-      background-color: #343a40;
-      color: white;
-      padding: 50px 0;
-      text-align: center;
-    }
+        pre {
+            background-color: #f7f7f7;
+            padding: 10px;
+            border-radius: 6px;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
 
-    .section-hero img {
-      border-radius: 50%;
-      margin-bottom: 20px;
-    }
+        code {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1rem;
+            color: #e74c3c;
+        }
 
-    .section-hero h1 {
-      font-size: 40px;
-      margin-bottom: 15px;
-    }
+        h2 {
+            font-size: 1.8rem;
+            color: #3498db;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
 
-    .section-hero p {
-      font-size: 18px;
-    }
+        h3 {
+            font-size: 1.5rem;
+            margin-top: 20px;
+        }
 
-    .card {
-      border-radius: 8px;
-      margin-top: 30px;
-      padding: 20px;
-      background-color: white;
-      box-shadow: 0 2px 15px rgba(0,0,0,0.1);
-    }
+        p {
+            line-height: 1.6;
+            font-size: 1rem;
+            margin-top: 10px;
+            color: #555;
+        }
 
-    .card h2 {
-      font-size: 24px;
-      margin-bottom: 20px;
-    }
+        ul {
+            list-style: none;
+            padding-left: 20px;
+        }
 
-    .card pre {
-      background-color: #f4f4f4;
-      padding: 10px;
-      border-radius: 5px;
-      font-size: 14px;
-      font-family: monospace;
-    }
+        ul li {
+            margin-bottom: 10px;
+            font-size: 1rem;
+            color: #333;
+        }
 
-    footer {
-      background-color: #343a40;
-      color: white;
-      text-align: center;
-      padding: 20px 0;
-    }
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
 
-    footer a {
-      color: #ffffff;
-      text-decoration: none;
-    }
-  </style>
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #2c3e50;
+            color: #fff;
+            font-size: 1rem;
+        }
+
+        .footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <nav class="navbar navbar-expand-lg navbar-light">
-      <div class="container">
-        <a class="navbar-brand" href="https://git.beta.gs/">Git.BETA.GS</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-default" aria-controls="navbar-default" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbar-default">
-          <ul class="navbar-nav ml-lg-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="https://git.beta.gs/">首页</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="https://git.beta.gs/index.php/8.html" title="一键DD脚本[旧版]">一键DD脚本[旧版]</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="https://git.beta.gs/index.php/about.html" title="关于">关于</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </header>
-  
-  <main>
-    <section class="section-hero">
-      <div class="container">
-        <img src="https://git.beta.gs/usr/themes/Bubble/images/avatar.png" class="avatar" style="width: 120px; height: 120px;">
-        <h1>一键DD脚本</h1>
-        <p class="lead">beta.gs</p>
-      </div>
-    </section>
-
-    <div class="card">
-      <h2><a href="https://git.beta.gs/index.php/archives/3/" class="text-default">一键DD脚本</a></h2>
-      <p>一键DD脚本，支持性好，更智能更全面，支持国内外各种VPS重装，特别是对国内各种访问国外资源慢的VPS安装有奇效。</p>
-      
-      <h3>安装重装系统的前提组件:</h3>
-      <p><strong>Debian/Ubuntu:</strong></p>
-      <pre><code>apt-get install -y xz-utils openssl gawk file wget screen && screen -S os</code></pre>
-
-      <p><strong>RedHat/CentOS:</strong></p>
-      <pre><code>yum install -y xz openssl gawk file glibc-common wget screen && screen -S os</code></pre>
-
-      <p>更多内容，请查看[旧版脚本](https://git.beta.gs/index.php/8.html).</p>
+    <h1>项目 README</h1>
+    <div class="readme-content">
+        <?php
+        // 输出 README 文件的内容，并将特殊字符转换为 HTML 实体
+        echo nl2br(htmlspecialchars($readme_content));
+        ?>
     </div>
-  </main>
 
-  <footer>
-    <p>Copyright © Git.BETA.GS | <a href="https://git.beta.gs/index.php/about.html">关于</a></p>
-  </footer>
-
-  <!-- Core JS -->
-  <script src="https://git.beta.gs/usr/themes/Bubble/assets/vendor/jquery/jquery.min.js"></script>
-  <script src="https://git.beta.gs/usr/themes/Bubble/assets/vendor/popper/popper.min.js"></script>
-  <script src="https://git.beta.gs/usr/themes/Bubble/assets/vendor/bootstrap/bootstrap.min.js"></script>
+    <div class="footer">
+        <p>Copyright &copy; <?php echo date("Y"); ?> | <a href="https://github.com/yourusername/yourproject">查看源码</a></p>
+    </div>
 </body>
 </html>
