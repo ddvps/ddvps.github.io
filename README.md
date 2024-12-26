@@ -1,47 +1,114 @@
-# Git.BETA.GS
+# 使用教程：
+阿里云DD安装Windows用27、31
+安装重装系统的前提组件:
 
-Git.BETA.GS 是一个提供一键重装系统脚本的工具平台，特别适合国内外VPS用户。通过使用该工具，用户可以快速、方便地重新安装操作系统，并支持多种系统镜像和配置选项。下面是该平台的主要功能和相关说明。
+Debian/Ubuntu:
 
-## 功能
 
-- 提供 **一键DD脚本**，支持多种操作系统的安装，包括 **Debian**, **Ubuntu**, **CentOS**, **Rocky**, **Windows** 等。
-- 支持 **国内和国外镜像源**，并针对国内用户优化了镜像下载，解决了访问速度慢的问题。
-- 可以自定义安装过程中的 **SSH端口** 和 **系统密码**，并支持特殊字符的密码。
-- 允许用户通过选择不同的系统镜像（如 **41合1镜像**）来重装系统。
+```
+apt-get install -y xz-utils openssl gawk file wget screen && screen -S os
+```
 
-## 页面结构
+RedHat/CentOS:
 
-### 标题部分
 
-页面顶部是一个导航栏，展示了以下几个主要链接：
-- [首页](https://git.beta.gs/)
-- [一键DD脚本[旧版]](https://git.beta.gs/index.php/8.html)
-- [关于](https://git.beta.gs/index.php/about.html)
+```
+yum install -y xz openssl gawk file glibc-common wget screen && screen -S os
+```
 
-### 主要内容部分
 
-页面的核心部分展示了 "一键DD脚本" 功能，包含以下几个重要部分：
 
-1. **系统介绍**  
-   该工具提供一个方便的接口，帮助用户选择和安装各种操作系统，并支持根据用户需要提供不同的配置选项。
+如果出现异常，请刷新Mirrors缓存或更换镜像源。
 
-2. **更新说明**  
-   - 2023年3月13日：新增强制 CN 模式，支持国内主机安装。
-   - 2022年7月24日：更新并增加了大量系统镜像，41合1脚本。
-   - 2022年7月3日：新增自定义 SSH 端口选项（9-16）。
+RedHat/CentOS:
 
-3. **安装步骤**
-   - **Debian/Ubuntu**：使用以下命令安装所需组件：
-     ```bash
-     apt-get install -y xz-utils openssl gawk file wget screen && screen -S os
-     ```
-   - **RedHat/CentOS**：
-     ```bash
-     yum install -y xz openssl gawk file glibc-common wget screen && screen -S os
-     ```
 
-4. **下载脚本并执行**
-   使用 `wget` 命令下载并执行重装脚本：
-   ```bash
-   wget --no-check-certificate -O NewReinstall.sh https://raw.githubusercontent.com/fcurrk/reinstall/master/NewReinstall.sh && chmod a+x NewReinstall.sh && bash NewReinstall.sh
-   ···
+```
+yum makecache && yum update -y
+```
+
+
+
+Debian/Ubuntu:
+
+
+```
+apt update -y && apt dist-upgrade -y
+```
+
+
+（ipv4忽略，NATipv6使用）快速使用一键设置NAT64地址
+
+
+```
+mv /etc/resolv.conf /etc/resolv.conf.bak && echo -e "nameserver 2001:67c:2b0::4\nnameserver 2001:67c:2b0::6" > /etc/resolv.conf
+```
+
+
+使用:
+
+
+```
+wget --no-check-certificate -O NewReinstall.sh https://git.io/newbetags && chmod a+x NewReinstall.sh && bash NewReinstall.sh
+```
+
+
+
+如为CN主机(部分主机商已不能使用)，可能出现报错或不能下载脚本的问题，可执行以下命令开始安装.
+
+
+```
+wget --no-check-certificate -O NewReinstall.sh https://jsd.onmicrosoft.cn/gh/a21922/ddos@master/NewReinstall.sh && chmod a+x NewReinstall.sh && bash NewReinstall.sh
+```
+
+
+41合1的系统一键DD选择界面，输入99则使用自定义镜像。 以上系统密码不为默认密码的均为网络收集，如有疑虑使用自己的自定义镜像。
+41合一系统密码：
+
+
+```
+1、CentOS 7.7 (已关闭防火墙及SELinux，默认密码Pwd@CentOS)
+2、CentOS 7 (默认密码cxthhhhh.com)
+3、CentOS 7 (支持ARM64、UEFI，默认密码cxthhhhh.com)
+4、CentOS 8 (默认密码cxthhhhh.com)
+5、Rocky 8 (默认密码cxthhhhh.com)
+6、Rocky 8 (支持UEFI，默认密码cxthhhhh.com)
+7、Rocky 8 (支持ARM64、UEFI，默认密码cxthhhhh.com)
+8、CentOS 9 (默认密码cxthhhhh.com)
+9、CentOS 6 (官方源原版，默认密码Minijer.com)
+10、Debian 11 (官方源原版，默认密码Minijer.com)
+11、Debian 10 (官方源原版，默认密码Minijer.com)
+12、Debian 9 (官方源原版，默认密码Minijer.com)
+13、Debian 8 (官方源原版，默认密码Minijer.com)
+14、Ubuntu 20.04 (官方源原版，默认密码Minijer.com)
+15、Ubuntu 18.04 (官方源原版，默认密码Minijer.com)
+16、Ubuntu 16.04 (官方源原版，默认密码Minijer.com)
+17、Windows Server 2022 (默认密码cxthhhhh.com)
+18、Windows Server 2022 (支持UEFI，默认密码cxthhhhh.com)
+19、Windows Server 2019 (默认密码cxthhhhh.com)
+20、Windows Server 2016 (默认密码cxthhhhh.com)
+21、Windows Server 2012 (默认密码cxthhhhh.com)
+22、Windows Server 2008 (默认密码cxthhhhh.com)
+23、Windows Server 2003 (默认密码cxthhhhh.com)
+24、Windows 10 LTSC (默认密码Teddysun.com)
+25、Windows 10 LTSC (支持UEFI，默认密码Teddysun.com)
+26、Windows 7 x86 Lite (默认密码nat.ee)
+27、Windows 7 x86 Lite (阿里云专用，默认密码nat.ee)
+28、Windows 7 x64 Lite (默认密码nat.ee)
+29、Windows 7 x64 Lite (支持UEFI，默认密码nat.ee)
+30、Windows 10 LTSC Lite (默认密码nat.ee)
+31、Windows 10 LTSC Lite (阿里云专用，默认密码nat.ee)
+32、Windows 10 LTSC Lite (支持UEFI，默认密码nat.ee)
+33、Windows Server 2003 Lite (C盘默认10G，默认密码WinSrv2003x86-Chinese)
+34、Windows Server 2008 Lite (默认密码nat.ee)
+35、Windows Server 2008 Lite (支持UEFI，默认密码nat.ee)
+36、Windows Server 2012 Lite (默认密码nat.ee)
+37、Windows Server 2012 Lite (支持UEFI，默认密码nat.ee)
+38、Windows Server 2016 Lite (默认密码nat.ee)
+39、Windows Server 2016 Lite (支持UEFI，默认密码nat.ee)
+40、Windows Server 2022 Lite (默认密码nat.ee)
+41、Windows Server 2022 Lite (支持UEFI，默认密码nat.ee)
+99、自定义镜像
+```
+
+
