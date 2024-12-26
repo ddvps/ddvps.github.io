@@ -1,0 +1,22 @@
+<?php
+// 读取 README 文件内容
+$readme_content = file_get_contents('README.md');
+?>
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>项目主页</title>
+    <link rel="stylesheet" href="style.css"> <!-- 如果需要样式 -->
+</head>
+<body>
+    <h1>项目 README</h1>
+    <div class="readme-content">
+        <?php
+        // 输出 README 文件的内容
+        echo nl2br(htmlspecialchars($readme_content));
+        ?>
+    </div>
+</body>
+</html>
