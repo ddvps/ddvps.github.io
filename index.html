@@ -11,9 +11,6 @@
     <!-- 引入 Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 
-    <!-- 引入自定义 CSS 样式 -->
-    <link rel="stylesheet" href="style.css">
-
     <style>
         body {
             font-family: 'Roboto', sans-serif;
@@ -111,12 +108,16 @@
         </div>
 
         <div class="footer">
-            <p>&copy; <?php echo date("Y"); ?> | <a href="https://github.com/ddvps/ddvps.github.io" target="_blank">查看源码</a></p>
+            <p>&copy; <span id="year"></span> | <a href="https://github.com/ddvps/ddvps.github.io" target="_blank">查看源码</a></p>
         </div>
     </div>
 
     <!-- 使用 GitHub API 获取 README 内容 -->
     <script>
+        // 获取当前年份并显示
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // GitHub 仓库的信息
         const repoOwner = 'ddvps'; // 替换为你的 GitHub 用户名
         const repoName = 'ddvps.github.io'; // 替换为你的仓库名称
         const apiUrl = `https://raw.githubusercontent.com/${repoOwner}/${repoName}/main/README.md`; // GitHub 仓库中的 README.md 地址
