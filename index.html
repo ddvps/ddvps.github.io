@@ -117,9 +117,9 @@
 
     <!-- 使用 GitHub API 获取 README 内容 -->
     <script>
-        const repoOwner = 'ddvps';
-        const repoName = 'ddvps.github.io';
-        const apiUrl = `https://raw.githubusercontent.com/${repoOwner}/${repoName}/main/README.md`;
+        const repoOwner = 'ddvps'; // 替换为你的 GitHub 用户名
+        const repoName = 'ddvps.github.io'; // 替换为你的仓库名称
+        const apiUrl = `https://raw.githubusercontent.com/${repoOwner}/${repoName}/main/README.md`; // GitHub 仓库中的 README.md 地址
 
         // 使用代理服务解决 CORS 问题
         const proxyUrl = 'https://api.allorigins.win/raw?url=' + encodeURIComponent(apiUrl);
@@ -130,7 +130,7 @@
             .then(data => {
                 // 使用 marked.js 渲染 Markdown 内容
                 const readmeContainer = document.getElementById('readme-content');
-                readmeContainer.innerHTML = marked(data);
+                readmeContainer.innerHTML = marked(data); // 渲染为 HTML 格式
             })
             .catch(error => {
                 console.error('Error loading README:', error);
