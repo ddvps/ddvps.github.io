@@ -5,32 +5,123 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Git.BETA.GS</title>
-    <link href="https://git.beta.gs/usr/themes/Bubble/assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- 引入Google字体 -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- 引入FontAwesome图标库 -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link href="https://git.beta.gs/usr/themes/Bubble/assets/css/argon.min.css" rel="stylesheet">
+    <style>
+        /* 自定义样式 */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f7fc;
+        }
+
+        /* 优化导航栏 */
+        .navbar {
+            background: linear-gradient(90deg, rgba(65, 105, 225, 1) 0%, rgba(0, 212, 255, 1) 100%);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-nav .nav-link {
+            font-weight: 500;
+            color: white !important;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #FFD700 !important;
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        /* 美化英雄区域 */
+        .section-hero {
+            background: linear-gradient(45deg, rgba(255, 165, 0, 0.8), rgba(0, 123, 255, 0.8));
+            color: white;
+            padding: 5rem 0;
+        }
+
+        .section-hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .section-hero .lead {
+            font-size: 1.25rem;
+        }
+
+        .avatar {
+            border-radius: 50%;
+            border: 4px solid #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* 卡片样式 */
+        .content-card {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            background-color: white;
+        }
+
+        .content-card h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #333;
+        }
+
+        .content-card .list-tag {
+            font-size: 0.9rem;
+            color: #777;
+        }
+
+        .content-card p {
+            line-height: 1.7;
+            font-size: 1rem;
+            color: #444;
+        }
+
+        /* 轮播图片样式 */
+        img {
+            border-radius: 10px;
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+        }
+
+        /* 底部样式 */
+        footer {
+            background-color: #2d2d2d;
+            color: white;
+            padding: 1rem 0;
+        }
+
+        footer .nav-footer .nav-item .nav-link {
+            color: white !important;
+        }
+
+        footer .nav-footer .nav-item .nav-link:hover {
+            color: #FFD700 !important;
+        }
+
+    </style>
 </head>
 
 <body>
     <!-- Header Section -->
     <header class="header-global">
-        <nav id="navbar-main" class="navbar navbar-main navbar-expand-lg navbar-transparent navbar-light headroom headroom--not-bottom headroom--top headroom--pinned">
+        <nav id="navbar-main" class="navbar navbar-main navbar-expand-lg navbar-transparent navbar-light">
             <div class="container">
                 <a class="navbar-brand" href="https://git.beta.gs/">Git.BETA.GS</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-default" aria-controls="navbar-default" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbar-default">
-                    <div class="navbar-collapse-header">
-                        <div class="row">
-                            <div class="col-6 collapse-brand">
-                                <a href="https://git.beta.gs/"><h5>Git.BETA.GS</h5></a>
-                            </div>
-                            <div class="col-6 collapse-close">
-                                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-default" aria-controls="navbar-default" aria-expanded="false" aria-label="Toggle navigation">
-                                    <span></span><span></span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
                     <ul class="navbar-nav ml-lg-auto align-items-lg-center">
                         <li class="nav-item"><a class="nav-link" href="https://git.beta.gs/">首页</a></li>
                         <li class="nav-item"><a class="nav-link" href="https://git.beta.gs/index.php/8.html" title="一键DD脚本[旧版]">一键DD脚本[旧版]</a></li>
@@ -44,19 +135,14 @@
     <!-- Main Section -->
     <main>
         <section class="section section-lg section-hero section-shaped">
-            <div class="shape shape-style-1 shape-primary">
-                <span class="span-150"></span><span class="span-50"></span><span class="span-50"></span>
-                <span class="span-75"></span><span class="span-100"></span><span class="span-75"></span>
-                <span class="span-50"></span><span class="span-100"></span><span class="span-50"></span><span class="span-100"></span>
-            </div>
             <div class="container shape-container d-flex align-items-center py-lg">
                 <div class="col px-0">
                     <div class="row align-items-center justify-content-center">
                         <div class="col-lg-6 text-center">
                             <img src="https://git.beta.gs/usr/themes/Bubble/images/avatar.png" class="avatar" style="margin-bottom: 1rem; height: 100px; width: 100px;">
-                            <h1 class="text-white">一键DD脚本</h1>
+                            <h1>一键DD脚本</h1>
                             <hr>
-                            <p class="lead text-white">beta.gs</p>
+                            <p class="lead">beta.gs</p>
                         </div>
                     </div>
                 </div>
@@ -75,24 +161,9 @@
                         </div>
                         <p>一键DD脚本，支持性好，更智能更全面，支持国内外各种VPS重装，特别是对国内各种访问国外资源慢的VPS安装有奇效。</p>
                         <hr>
-                        <p>更新说明：<br>20230313: 新增强制CN模式，使用CN Mode选择Y将默认为国内主机安装，国外主机请选择N。<br>20220724：更新及增加大量系统镜像，41合1脚本，请注意看说明。</p>
-                        <hr>
                         <h2>安装重装系统的前提组件:</h2>
-                        <p>Debian/Ubuntu:</p>
                         <pre><code>apt-get install -y xz-utils openssl gawk file wget screen && screen -S os</code></pre>
-                        <p>RedHat/CentOS:</p>
-                        <pre><code>yum install -y xz openssl gawk file glibc-common wget screen && screen -S os</code></pre>
-                        <p>如果出现异常，请刷新Mirrors缓存或更换镜像源。</p>
-                        <hr>
-                        <h2>图片展示</h2>
-                        <img src="https://git.beta.gs/usr/uploads/2022/07/366941637.png" alt="20220724001.png" title="20220724001.png">
-                        <hr>
-                        <h2>更多</h2>
-                        <p>点击使用 <a href="https://git.beta.gs/index.php/8.html">旧版脚本</a></p>
-                        <hr>
-                        <p>特别感谢：Vicer、cxt、hiCasper等各位技术大佬的脚本，站长只是脚本的"搬运工"。</p>
-                        <p>版权申明：以上所有脚本、系统均为网络收集，站长不对资源的安全及版权纠纷负责。</p>
-                        <p>站长邮箱：<a href="mailto:minijer@beta.gs">minijer#beta.gs(#换成@)</a></p>
+                        <img src="https://git.beta.gs/usr/uploads/2022/07/366941637.png" alt="20220724001.png">
                     </div>
                 </div>
             </section>
