@@ -1,7 +1,18 @@
 <?php
-// 读取 README 文件内容
-$readme_content = file_get_contents('README.md');
+// 引入 Parsedown 库
+require 'vendor/autoload.php';
+
+// 初始化 Parsedown 对象
+$Parsedown = new Parsedown();
+
+// 从 GitHub 获取 README.md 文件内容（替换为你的 GitHub 用户名和仓库名）
+$readme_url = 'https://raw.githubusercontent.com/yourusername/yourproject/master/README.md';
+$readme_content = file_get_contents($readme_url);
+
+// 将 Markdown 内容转换为 HTML
+$readme_html = $Parsedown->text($readme_content);
 ?>
+
 <!DOCTYPE html>
 <html lang="zh">
 <head>
@@ -111,10 +122,8 @@ $readme_content = file_get_contents('README.md');
     <div class="container">
         <h1>项目 README</h1>
         <div class="readme-content">
-            <?php
-            // 输出 README 文件的内容，并将特殊字符转换为 HTML 实体
-            echo nl2br(htmlspecialchars($readme_content));
-            ?>
+            <!-- 显示解析后的 README 内容 -->
+            <?php echo $readme_html; ?>
         </div>
 
         <div class="footer">
