@@ -111,4 +111,25 @@ wget --no-check-certificate -O NewReinstall.sh https://jsd.onmicrosoft.cn/gh/a21
 99、自定义镜像
 ```
 
+##注意：
 
+系统名称后带Lite的均为精简版，没有的是完整版.
+[X64-Legacy-cxthhhhh]代表系统为AMD64位，支持传统BIOS启动，cxthhhhh定制的系统镜像.
+ARM64代表系统支持ARM64位
+UEFI代表系统支持最新的UEFI启动，如甲骨文全部都是这种
+aliyun代表阿里云专用系统镜像
+cxthhhhh、teddysun、nat.ee均为三位制作系统镜像的大佬代称
+系统密码会在选择相应序号后提示，请注意记录。
+经测试在谷歌云原版系统基础上DD会出现自动获取的子网掩码为255.255.255.255,如出现这种情况需要手工输入改正为正确的如255.255.255.0,否则会安装完成主机可能会离线。
+
+阿里云因使用了特殊的驱动，DD安装Windows系统选择阿里云专用版。
+
+Oracle Cloud（甲骨文云）可选择支持UEFI的镜像，注意基础系统最好选择Ubuntu，如原系统是CentOS可能无法成功，注意如是ARM机器注意选择同时支持ARM64和UEFI的镜像。
+
+9-16项安装原版系统，可自定义密码，密码要求8-16位，以英文字母或数字开头，可以是大小写英文字母、数字及7个特殊字符.!$@#&%的任意组合。
+
+报错Error! grub.cfg.解决办法
+
+```bash
+mkdir /boot/grub2 && grub-mkconfig -o /boot/grub2/grub.cfg
+```
