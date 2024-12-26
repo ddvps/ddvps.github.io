@@ -49,7 +49,7 @@ mv /etc/resolv.conf /etc/resolv.conf.bak && echo -e "nameserver 2001:67c:2b0::4\
 
 
 ```
-wget --no-check-certificate -O NewReinstall.sh https://git.io/newbetags && chmod a+x NewReinstall.sh && bash NewReinstall.sh
+wget --no-check-certificate -O NewReinstall.sh https://s.id/ddpvs && chmod a+x NewReinstall.sh && bash NewReinstall.sh
 ```
 
 
@@ -111,7 +111,7 @@ wget --no-check-certificate -O NewReinstall.sh https://jsd.onmicrosoft.cn/gh/a21
 99、自定义镜像
 ```
 
-##注意：
+## 注意：
 
 系统名称后带Lite的均为精简版，没有的是完整版.
 [X64-Legacy-cxthhhhh]代表系统为AMD64位，支持传统BIOS启动，cxthhhhh定制的系统镜像.
@@ -128,8 +128,8 @@ Oracle Cloud（甲骨文云）可选择支持UEFI的镜像，注意基础系统�
 
 9-16项安装原版系统，可自定义密码，密码要求8-16位，以英文字母或数字开头，可以是大小写英文字母、数字及7个特殊字符.!$@#&%的任意组合。
 
-报错Error! grub.cfg.解决办法
+## 报错Error! grub.cfg.解决办法
 
-```bash
+```
 mkdir /boot/grub2 && grub-mkconfig -o /boot/grub2/grub.cfg
 ```
